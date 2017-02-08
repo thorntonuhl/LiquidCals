@@ -1,5 +1,9 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
 header {
   text-align: center;
+  font-size: 48px;
 }
 h1 {
 
@@ -23,4 +27,40 @@ p {
 
 }
 
-/*Index Page*/
+/* Index Page */ 
+.body-landing .landing-drinks {
+  display: block;
+  overflow: hidden;
+  margin: auto;
+}
+.body-landing .landing-drinks .drinks-container {
+
+  
+}
+.body-landing .landing-drinks .drinks-shift-left {
+  height: 100px;
+  float: left;
+  line-height: 100px;
+  text-align: center;
+  width: 10%;
+}
+.body-landing .landing-drinks .drinks-shift-right {
+  height: 100px;  
+  float: left;
+  line-height: 100px;
+  text-align: center;
+  width: 10%;
+}
+
+.body-landing .landing-drinks .drinks-container {
+  width: 80%;
+  display: block;
+  float: left;
+  overflow: hidden;
+  margin: auto;
+}
+
+.body-landing .landing-drinks .drinks-container .drink {
+  width: 25%;
+  float: left;
+}
