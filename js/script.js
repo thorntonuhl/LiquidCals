@@ -17,6 +17,7 @@ var cup = document.getElementById('plastic cup');
 var container = "";
 
 var secondpg = document.getElementById('secondpg'); //Adjust name as needed
+var ti = document.getElementById('textinput').value;      //Adjust name as needed (text input)
 var drink = "";
 
 var thirdpag = document.getElementById('thirdpg');  //Adjust name as needed
