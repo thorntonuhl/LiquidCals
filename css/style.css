@@ -66,22 +66,22 @@ p {
   margin: auto;
 }
 
-.body-landing .landing-drinks .drinks-container .drink {
+.body-landing .landing-drinks .drinks-container .container {
   width: 25%;
   float: left;
 }
-.body-landing .landing-drinks .drinks-container .drink:hover {
+.body-landing .landing-drinks .drinks-container .container:hover {
   border-bottom: solid;
   border-bottom-width: 3px;
   border-color: black;
   border-radius: 5px;
 }
-.body-landing .landing-drinks .drinks-container .drink embed {
+.body-landing .landing-drinks .drinks-container .container embed {
   width: 100%;
 }
 
 @media screen and (max-width: 768px) {
-  .body-landing .landing-drinks .drinks-container .drink {
+  .body-landing .landing-drinks .drinks-container .container {
     width: 100%;
   }
 }
