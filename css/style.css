@@ -28,6 +28,12 @@ p {
 }
 
 /* Index Page */ 
+.body-landing {
+  text-align: center;
+}
+.body-landing .landing-text {
+  margin: 20px 0px;
+}
 .body-landing .landing-drinks {
   display: block;
   overflow: hidden;
@@ -38,16 +44,16 @@ p {
   
 }
 .body-landing .landing-drinks .drinks-shift-left {
-  height: 100px;
+  height: 100%;
   float: left;
-  line-height: 100px;
+  line-height: 100%;
   text-align: center;
   width: 10%;
 }
 .body-landing .landing-drinks .drinks-shift-right {
-  height: 100px;  
+  height: 100%;  
   float: left;
-  line-height: 100px;
+  line-height: 100%;
   text-align: center;
   width: 10%;
 }
@@ -63,4 +69,19 @@ p {
 .body-landing .landing-drinks .drinks-container .drink {
   width: 25%;
   float: left;
+}
+.body-landing .landing-drinks .drinks-container .drink:hover {
+  border-bottom: solid;
+  border-bottom-width: 3px;
+  border-color: black;
+  border-radius: 5px;
+}
+.body-landing .landing-drinks .drinks-container .drink embed {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .body-landing .landing-drinks .drinks-container .drink {
+    width: 100%;
+  }
 }
