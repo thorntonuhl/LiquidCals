@@ -6,7 +6,10 @@ html, body {
 }
 header {
   text-align: center;
-  font-size: 48px;
+  font-size: 60px;
+}
+footer {
+  font-size: 12px;
 }
 h1 {
 
@@ -43,17 +46,23 @@ p {
 
 /* Index Page */ 
 .body-landing {
-  margin-top: 10%;
+  margin-top: 20px;
   text-align: center;
 }
 .body-landing .landing-text {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   font-size: 30px;
 }
+
+.body-landing .landing-text span{
+  font-size: 12px
+}
+
+.body-landing .landing-text span:hover{
+  font-size: 12px
+}
+
 .body-landing .landing-drinks {
-  display: -ms-flex; 
-  display: -webkit-flex; 
-  display: flex; 
   overflow: hidden;
   margin: auto;
   height: 100%
@@ -63,22 +72,33 @@ p {
   
 }
 .body-landing .landing-drinks .drinks-shift-left {
-  flex: 1;
   float: left;
-  line-height: 100%;
+  line-height: 400px;
   text-align: center;
   width: 10%;
+}
+.body-landing .landing-drinks .drinks-shift-left a img:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+.body-landing .landing-drinks .drinks-shift-left a img{
+  line-height: 100%;
+  width: 100%;
+}
+
+.body-landing .landing-drinks .drinks-shift-right {
+  float: left;
+  line-height: 400px;
+  text-align: center;
+  width: 10%;
+}
+.body-landing .landing-drinks .drinks-shift-right a img:hover {
+  cursor: pointer;
+  opacity: 0.5;
 }
 .body-landing .landing-drinks .drinks-shift-right a img{
   line-height: 100%;
   width: 100%;
-  flex-direction: column;
-}
-.body-landing .landing-drinks .drinks-shift-right {
-  flex: 1;
-  line-height: 100%;
-  text-align: center;
-  width: 10%;
 }
 
 .body-landing .landing-drinks .drinks-container {
@@ -89,7 +109,7 @@ p {
   margin: auto;
 }
 
-.body-landing .landing-drinks .drinks-container .drink {
+.body-landing .landing-drinks .drinks-container .container {
   width: 33%;
   float: left;
 }
