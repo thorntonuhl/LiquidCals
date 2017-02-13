@@ -11,8 +11,6 @@ var calories = 0;    // What we're going to return
 //var next = document.getElementById('next');         //Adjust name as needed (for next button)
 
 var firstpg = document.getElementById('home');
-var right = document.getElementById('right-shift')
-var left = document.getElementById('left-shift')
 var container = "";
 
 var secondpg = document.getElementById('secondpg'); //Adjust name as needed
@@ -80,22 +78,8 @@ function choosecontainer(ccontainer) {
   curr = 2; // Move to search page
 }
 
-$(document).ready(function(){
-  $('.carousel').carousel({indicators: true, dist: -10});
-});
-
-function shiftRight() {
-  $('.carousel').carousel('next');
-}
-
-function shiftLeft() {
-  $('.carousel').carousel('prev');
-}
-
 if (curr == 1) {//FIRST PAGE
   display(firstpg);
-  right.onclick = shiftRight;
-  left.onclick = shiftLeft;
 }
 
 else if (curr == 2) {//SECOND PAGE
