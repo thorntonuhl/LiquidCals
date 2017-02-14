@@ -24,69 +24,57 @@ var height = document.getElementById('drinkcontainer');
 var amount = document.getElementById('slider');
 var answer = 0;
 
-var drinks = document.getElementsByClassName('container');
-var leftShiftDrinks = document.getElementById('left-shift');
-var rightShiftDrinks = document.getElementById('right-shift');
-var selected_drinks = [0, 1, 2];
+var wineGlass = document.getElementById('wine-glass')
+var shotGlass = document.getElementById('shot-glass')
+var soloCup = document.getElementById('solo-cup')
+var coffeeCup = document.getElementById('coffee-cup')
 
-function changedrink(drink) {	//drink should be a string
-	searchbar.value = drink;
+function chooseContainer2(){
+  container = this.id
+  curr = 2
 }
 
-function choosedrink() {   //Finalize drink choice and indicate moving to next page
-	found = false;
-	lowercasedrink = searchbar.value.toLowerCase();
-  	for (name in caloriedb){		// Check if drink exists in db
-    	if (name == lowercasedrink) {// If it does, then set drink and retrieve calories
-      		calories = caloriedb[name];
-      		drink = searchbar.value;
-      		found = true;
-    	}
-  	}
-  	if (found == true) {  //If drink is found in db, then move on to next page
-		curr = 3;
-	}
-	else {				  //Otherwise, try again.
-		searchbar.value = "Drink not found, please try again."
-	}
-}
+wineGlass.onclick = chooseContainer2
+shotGlass.onclick = chooseContainer2
+soloCup.onclick = chooseContainer2
+coffeeCup.onclick = chooseContainer2
 
-function display(page) {
-  page.style.display = 'block';
-  if (page == firstpg) {
-    secondpg.style.display = 'none';
-    thirdpg.style.display = 'none';
-    next = document.getElementById('firstpgnext');
-  }
-  else if (page = secondpg) {
-    firstpg.style.display = 'none';
-    thirdpg.style.display = 'none';
-    next = document.getElementById('secondpgnext');
-  }
-  else {
-    firstpg.style.display = 'none';
-    secondpg.style.display = 'none';
-    next = document.getElementById('thirdpgnext');
-  }
-} 
+// function display(page) {
+//   page.style.display = 'block';
+//   if (page == firstpg) {
+//     secondpg.style.display = 'none';
+//     thirdpg.style.display = 'none';
+//     next = document.getElementById('firstpgnext');
+//   }
+//   else if (page == secondpg) {
+//     firstpg.style.display = 'none';
+//     thirdpg.style.display = 'none';
+//     next = document.getElementById('secondpgnext');
+//   }
+//   else {
+//     firstpg.style.display = 'none';
+//     secondpg.style.display = 'none';
+//     next = document.getElementById('thirdpgnext');
+//   }
+// } 
 
-function choosecontainer(ccontainer) {
-  if (ccontainer == 'wine glass') container = "wine glass";
-  else if (ccontainer == 'coffee cup') container = "coffee cup";
-  else if (ccontainer == 'shot glass') container = "shot glass";
-  else if (ccontainer == 'plastic cup') container = "plastic cup";
-  curr = 2; // Move to search page
-}
+// function choosecontainer(ccontainer) {
+//   if (ccontainer == 'wine glass') container = "wine glass";
+//   else if (ccontainer == 'coffee cup') container = "coffee cup";
+//   else if (ccontainer == 'shot glass') container = "shot glass";
+//   else if (ccontainer == 'plastic cup') container = "plastic cup";
+//   curr = 2; // Move to search page
+// }
 
-if (curr == 1) {//FIRST PAGE
-  display(firstpg);
-}
+// if (curr == 1) {//FIRST PAGE
+//   display(firstpg);
+// }
 
-else if (curr == 2) {//SECOND PAGE
-  display(secondpg);
-  submit.onclick = choosedrink();
-}
+// else if (curr == 2) {//SECOND PAGE
+//   display(secondpg);
+//   submit.onclick = choosedrink();
+// }
 
-else {
-  answer = (height / amount) * calories;
-}
+// else {
+//   answer = (height / amount) * calories;
+// }
