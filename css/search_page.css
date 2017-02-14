@@ -1,28 +1,15 @@
 #secondpg{display: none;}
-#form_row{width:100%; text-align: center; background-color:white}
+#form_row{width:50%; text-align: center; background-color: white; margin: auto; border:solid; border-width: 3px; border-color: #666666;}
 
-#search_button{font-size: 57; align-self:center}
+#search_button{font-size: xx-large; align-self:center}
 
 #submit_row{width:100%; height:30px; background-color: white; text-align: center;}
 
-#submit_button{width: 100; height: 25; top:50%; left:50%;}
-
-
+#submit_button{width: 100px; height: 50px; top:50%; left:50%;}
 
 #first_row {width:100%; height:170px; background-color: white;}
  
-#button-1{width:48%; height:150px; margin: 35px 5px 5px 12px; background-color: darkgrey; font-family: Verdana; font-size: 25px; border-radius: 12px;}
-#button-1:hover {width:48%; height:150px; margin: 35px 5px 5px 12px; background-color: #b0e0e6; font-family: Verdana; font-size: 25px; border-radius: 12px;}
-
-#button-2{width:48%; height:150px; margin: 35px 5px 5px 12px; background-color: darkgrey; font-family: Verdana; font-size: 25px; border-radius: 12px;}
-#button-2:hover{width:48%; height:150px; margin: 35px 5px 5px 12px; background-color: #b0e0e6; font-family: Verdana; font-size: 25px; border-radius: 12px;}
-
-
+#button-1, #button-2, #button-3, #button-4 {width:48%; height:150px; margin: 35px 5px 5px 12px; background-color: #91DC5A; font-family: Verdana; font-size: 25px; color: white; border-radius: 12px;}
+#button-1:hover, #button-2:hover, #button-3:hover, #button-4:hover {width:48%; height:150px; margin: 35px 5px 5px 12px; background-color: #666666; font-family: Verdana; font-size: 25px; border-radius: 12px;}
 
 #second_row {width:100%; height:170px; background-color: white;}
-
-#button-3{width:48%; height:150px; margin: 35px 5px 5px 12px; background-color: darkgrey; font-family: Verdana; font-size: 25px; border-radius: 12px;}
-#button-3:hover{width:48%; height:150px; margin: 35px 5px 5px 12px; background-color: #b0e0e6; font-family: Verdana; font-size: 25px; border-radius: 12px;}
-
-#button-4{width:48%; height:150px; margin: 35px 5px 5px 12px; background-color: darkgrey; font-family: Verdana; font-size: 25px; border-radius: 12px;}
-#button-4:hover{width:48%; height:150px; margin: 35px 5px 5px 12px; background-color: #b0e0e6; font-family: Verdana; font-size: 25px; border-radius: 12px;}
