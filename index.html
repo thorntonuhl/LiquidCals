@@ -6,10 +6,12 @@
     <title>Liquid Cals</title>
 
     <link href="./css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/search_page.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -25,6 +27,7 @@
       </div>
 
       <div class="container-body">
+        <!-- First Page -->
         <div class="body-landing">
           <div class="landing-text">
             What did you drink out of?
@@ -38,10 +41,10 @@
 
             <div id='drinks-container' class="drinks-container">
               <div class="carousel">
-                <a class="carousel-item" href="#one!"><img src="./images/glass-with-wine.svg"></a>
-                <a class="carousel-item" href="#two!"><img src="./images/coffee-cup.svg"></a>
-                <a class="carousel-item" href="#three!"><img src="./images/shot-glass.svg"></a>
-                <a class="carousel-item" href="#four!"><img src="./images/plastic-cup.svg"></a>
+                <a class="carousel-item" id="wine-glass" href="#one!"><img src="./images/glass-with-wine.svg"></a>
+                <a class="carousel-item" id="coffee-cup" href="#two!"><img src="./images/coffee-cup.svg"></a>
+                <a class="carousel-item" id="shot-glass" href="#three!"><img src="./images/shot-glass.svg"></a>
+                <a class="carousel-item" id="solo-cup" href="#four!"><img src="./images/plastic-cup.svg"></a>
               </div>
             </div>
             <div class="drinks-shift-right" id="right-shift">
@@ -49,6 +52,40 @@
             </div>
           </div>
         </div>
+
+        <!-- Second Page -->
+        <div id='secondpg'>
+          <div id = "form_row">
+            <form>
+              <input type="text" id="search_button" name="drink_choice" placeholder = "   What did you drink?" ><br>
+            </form>
+          </div>
+          <div id = submit_row>
+            <button id = "submit_button">
+              submit
+            </button>
+          </div>
+          <div id = "first_row">
+            <button id = "drink_1" onclick = 'changedrink('Coffee')'>
+              Coffee
+            </button>
+            <button id = "drink_2" onclick = 'changedrink('Tea')'>
+              Tea
+            </button>
+          </div>
+          <div id = "second_row">
+            <button id = "drink_3" onclick = 'changedrink('Red Bull')'>
+              Red Bull
+            </button>
+            <button id = "drink_4" onclick = 'changedrink('Coke')'>
+              Coke
+            </button>
+          </div>
+        </div>
+
+
+
+
       </div>
 
       <div class="container-footer">
@@ -58,5 +95,6 @@
       </div>
     </div>
   </body>
+  <script src="./js/index.js" defer></script>
   <script src="./js/script.js" defer></script>
 </html>
