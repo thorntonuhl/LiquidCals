@@ -18,8 +18,6 @@
 }
 
 #text {
-	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
-	width:500px;
 	margin: 20px auto 0 auto;
 	font-size: 20px;
 	text-align: center
@@ -28,4 +26,10 @@
 
 #solo-cup-slider, #wine-glass-slider, #shot-glass-slider, #coffee-cup-slider {
 	display: none;
+}
+
+.info {
+	text-align: center;
+	font-size: 24px;
+	margin: 20px 0px;
 }
