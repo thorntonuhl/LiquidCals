@@ -6,7 +6,7 @@ $(document).ready(function (e) {
 var isdragging = false;	
 var fillpercent = 1;
 	
-$("#svgcontainer").click(function(event){
+$("#thirdpg").click(function(event){
     fillpercent = ((($(".fill").height() + $(".fill").offset().top) - event.pageY) / $(".fill").height());
 	if (fillpercent > 0 && fillpercent < 1) {
 		$(".st1").css("clip-path", "polygon(0 " + ((1-fillpercent)*100) + "%, 100% " + ((1-fillpercent)*100) + "%, 100% 100%, 0% 100%)");
@@ -14,15 +14,15 @@ $("#svgcontainer").click(function(event){
 }
 });
 
-$("#svgcontainer").mousedown(function(){
+$("#thirdpg").mousedown(function(){
 	isdragging = true;
 });	
 	
-$("#svgcontainer").mouseup(function(){
+$("#thirdpg").mouseup(function(){
 	isdragging = false;
 });	
 	
-$("#svgcontainer").mousemove(function(event){
+$("#thirdpg").mousemove(function(event){
 	if (isdragging) {
     fillpercent = ((($(".fill").height() + $(".fill").offset().top) - event.pageY) / $(".fill").height());
 	if (fillpercent > 0 && fillpercent < 1) {
