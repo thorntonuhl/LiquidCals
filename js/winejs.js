@@ -8,8 +8,6 @@ var fillpercent = 1;
 	
 $("#svgcontainer").click(function(event){
     fillpercent = ((($(".fill").height() + $(".fill").offset().top) - event.pageY) / $(".fill").height());
-	var sizer = $(".fill")[0].getBoundingClientRect();
-	alert("height: " + sizer.height() + " offset: " + $(".fill").offset().top + " pageY: " + event.pageY);
 	if (fillpercent > 0 && fillpercent < 1) {
 		$(".st1").css("-webkit-clip-path", "polygon(0 " + ((1-fillpercent)*100) + "%, 100% " + ((1-fillpercent)*100) + "%, 100% 100%, 0% 100%)");
 		$("#text").text("Percent of cup full: " + (fillpercent.toFixed(3)*100) + "%. We can use this variable to calculate calories");

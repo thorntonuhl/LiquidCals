@@ -1,12 +1,12 @@
 @charset "UTF-8";
 /* CSS Document */
 
-.st0{fill:black;}
+.st0{fill:#91DC5A;}
 
 .st1{
 	cursor: pointer;
-	fill:#730000;
-	clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
+	fill:#666666;
+	-webkit-clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
 
 }
 
@@ -24,3 +24,4 @@
 	text-align: center
 	
 }
+
