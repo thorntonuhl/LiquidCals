@@ -7,6 +7,8 @@
 
     <link href="./css/style.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/search_page.css">
+    <link href="css/winecss.css" rel="stylesheet" type="text/css">
+
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <!-- Compiled and minified CSS -->
@@ -19,7 +21,7 @@
 
   </head>
   <body>
-    <div id='home'>
+    <div>
       <div class="container-header">
         <header> 
           Liquid Cals 
@@ -28,7 +30,7 @@
 
       <div class="container-body">
         <!-- First Page -->
-        <div class="body-landing">
+        <div class="body-landing"  id='home'>
           <div class="landing-text">
             What did you drink out of?
             <br>
@@ -66,20 +68,127 @@
             </button>
           </div>
           <div id = "first_row">
-            <button id = "drink_1" onclick = 'changedrink('Coffee')'>
+            <button id = "button-1">
               Coffee
             </button>
-            <button id = "drink_2" onclick = 'changedrink('Tea')'>
+            <button id = "button-2">
               Tea
             </button>
           </div>
           <div id = "second_row">
-            <button id = "drink_3" onclick = 'changedrink('Red Bull')'>
+            <button id = "button-3">
               Red Bull
             </button>
-            <button id = "drink_4" onclick = 'changedrink('Coke')'>
+            <button id = "button-4">
               Coke
             </button>
+          </div>
+        </div>
+
+        <!-- Third Page -->
+
+        <div id="thirdpg">
+
+          <div id="solo-cup-slider">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+               viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="400px">
+
+            <g id="Layer_1">
+              <g>
+                <g>
+                  <path class="st0" d="M416.9,0H95.1C58.8,0,29.3,29.5,29.3,65.8c0,29.4,19.3,54.3,45.9,62.7L119.4,512h273.2l44.2-383.4
+                    c26.6-8.5,45.9-33.4,45.9-62.7C482.7,29.5,453.2,0,416.9,0z M353.5,468.1H158.5l-38.8-336.5h272.6L353.5,468.1z M416.9,87.8H95.1
+                    c-12.1,0-21.9-9.8-21.9-21.9S83,43.9,95.1,43.9h321.8c12.1,0,21.9,9.8,21.9,21.9C438.9,77.9,429,87.8,416.9,87.8z"/>
+                </g>
+              </g>
+            </g>
+            <g id="Layer_2">
+              <g>
+                <g class ="fill">
+                  <path class="st1" d="M353.5,468.1H158.5l-38.8-336.5h272.6L353.5,468.1z"/>
+                </g>
+              </g>
+            </g>
+            </svg>
+          </div>
+
+          <div id="coffee-cup-slider">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+               viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="400px">
+            <g id="Layer_1">
+              <g id="Layer_1_1_">
+                <g>
+                  <path class="st0" d="M503.8,436.4h-11.1H19.2H8.1c-4.5,0-8.2,3.7-8.2,8.2s3.7,8.2,8.2,8.2h4.7l4.7,16.5
+                    c3.5,12.1,16.1,21.6,28.7,21.6h419.4c12.6,0,25.2-9.5,28.7-21.6l4.7-16.5h4.7c4.5,0,8.2-3.7,8.2-8.2
+                    C512,440.1,508.3,436.4,503.8,436.4L503.8,436.4z M478.7,464.8c-1.5,5.1-7.6,9.8-13,9.8H46.3c-5.3,0-11.5-4.7-13-9.8l-3.4-12
+                    h452.2L478.7,464.8z"/>
+                  <path class="st0" d="M125.2,312.5H140c8.3,20.5,15.5,42.7,15.5,66.7c0,22.5,18.3,40.9,40.9,40.9h119.8
+                    c22.5,0,40.9-18.3,40.9-40.9c0-32.3,12.9-61.6,26.5-92.7c13.7-31.2,27.9-63.6,27.9-99.3c0-4.5-3.7-8.2-8.2-8.2H24.4
+                    c-4.5,0-8.2,3.7-8.2,8.2v16.3C16.2,263.6,65.1,312.5,125.2,312.5z M32.6,195.4h318.7c-0.7,10.8-2.9,22.2-6.6,34.4
+                    c-1.3,4.3,1.2,8.9,5.5,10.2c0.8,0.2,1.6,0.3,2.4,0.3c3.5,0,6.8-2.3,7.8-5.8c4.2-13.8,6.6-26.7,7.3-39.1h27.2
+                    c-1.9,29.1-13.8,56.1-26.3,84.5c-13.7,31.2-27.9,63.6-27.9,99.3c0,13.5-11,24.5-24.5,24.5H196.3c-13.5,0-24.5-11-24.5-24.5
+                    c0-28.9-9.5-55.7-18.8-78c-1.3-3.1-4.2-5-7.5-5h-20.3c-51.1,0-92.6-41.5-92.6-92.6V195.4L32.6,195.4z"/>
+                  <path class="st0" d="M209.7,154.6c0,4.5,3.7,8.2,8.2,8.2s8.2-3.7,8.2-8.2c0-8.4,2-12.3,4.5-17.1c3-5.7,6.4-12.2,6.4-24.7
+                    c0-12.4-3.4-18.9-6.4-24.7C228,83.3,226,79.5,226,71s2-12.3,4.5-17.1c3-5.7,6.4-12.2,6.4-24.7c0-4.5-3.7-8.2-8.2-8.2
+                    s-8.2,3.7-8.2,8.2c0,8.4-2,12.3-4.5,17.1c-3,5.7-6.4,12.2-6.4,24.7s3.4,18.9,6.4,24.7c2.5,4.8,4.5,8.7,4.5,17.1s-2,12.3-4.5,17.1
+                    C213.1,135.6,209.7,142.1,209.7,154.6z"/>
+                  <path class="st0" d="M275.1,154.6c0,4.5,3.7,8.2,8.2,8.2s8.2-3.7,8.2-8.2c0-8.4,2-12.3,4.5-17.1c3-5.7,6.4-12.2,6.4-24.7
+                    c0-12.4-3.4-18.9-6.4-24.7c-2.5-4.8-4.5-8.7-4.5-17.1s2-12.3,4.5-17.1c3-5.7,6.4-12.2,6.4-24.7c0-4.5-3.7-8.2-8.2-8.2
+                    s-8.2,3.7-8.2,8.2c0,8.4-2,12.3-4.5,17.1c-3,5.7-6.4,12.2-6.4,24.7s3.4,18.9,6.4,24.7c2.5,4.8,4.5,8.7,4.5,17.1s-2,12.3-4.5,17.1
+                    C278.4,135.6,275.1,142.1,275.1,154.6L275.1,154.6z"/>
+                </g>
+              </g>
+              <g id="Layer_3" class="st1">
+                <g class="fill">
+                  <path class="st3" d="M32.7,195.4h318.7c-0.7,10.8-2.9,22.2-6.6,34.4c-1.3,4.3,1.2,8.9,5.5,10.2c0.8,0.2,1.6,0.3,2.4,0.3
+                    c3.5,0,6.8-2.3,7.8-5.8c4.2-13.8,6.6-26.7,7.3-39.1H395c-1.9,29.1-13.8,56.1-26.3,84.5c-13.7,31.2-27.9,63.6-27.9,99.3
+                    c0,13.5-11,24.5-24.5,24.5H196.4c-13.5,0-24.5-11-24.5-24.5c0-28.9-9.5-55.7-18.8-78c-1.3-3.1-4.2-5-7.5-5h-20.3
+                    c-51.1,0-92.6-41.5-92.6-92.6L32.7,195.4L32.7,195.4z"/>
+                </g>
+              </g>
+            </g>
+            <g id="Layer_2">
+              <path class="st0" d="M132.2,278.8h6.2c2.7,0,5.3-1.4,6.8-3.7c1.5-2.3,1.8-5.2,0.7-7.7c-6.9-15.9-13.8-33-17.8-50.3
+                c-0.9-3.7-4.2-6.3-8-6.3h-54c-2.5,0-4.9,1.2-6.4,3.1c-1.5,2-2.1,4.6-1.5,7C66.6,255,97,278.8,132.2,278.8z M113.7,227.1
+                c3.2,12.1,7.6,23.8,12.2,35.1c-21.4-2.2-39.7-15.7-48.4-35.1H113.7z"/>
+            </g>
+            </svg>
+            </div>
+
+            <div id="shot-glass-slider">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+               viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="400px">
+            <g id="Capa_1">
+              <path class="st0" d="M404.2,27.8c0.7-7.1-1.6-14.2-6.4-19.5C393,3,386.2,0,379,0H133c-7.1,0-13.9,3-18.7,8.3s-7.1,12.4-6.4,19.5
+                L147.2,418v0.1l7.2,71.2c1.3,12.9,12.2,22.7,25.1,22.7h152.9c13,0,23.8-9.8,25.1-22.7l7.2-71.2V418L404.2,27.8z M351.1,50.5
+                l-42.8,424.4l-104.6-0.7L160.9,50.5H351.1z"/>
+            </g>
+            <g id="Layer_2" class="fill">
+              <path class="st1" d="M351.3,50.5l-43,424.4l-104.6-0.7L160.9,50.5H351.3z"/>
+            </g>
+            </svg>
+          </div>
+
+          <div id="wine-glass-slider">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+               viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="400px">
+
+            <g id="Capa_1">
+              <g>
+                <path class="st0" d="M352,480h-80V318.5c34.9-3.6,67.7-17.9,93.2-42.6c60.3-58.3,64.4-207.5,7.4-270.6L367.8,0H144.1l-4.8,5.3
+                  c-57,63.1-52.9,212.3,7.4,270.6c25.5,24.7,58.2,39,93.2,42.6V480h-80c-8.8,0-16,7.2-16,16s7.2,16,16,16h80h32h80
+                  c8.8,0,16-7.2,16-16S360.8,480,352,480z M158.8,32h194.5c41.1,53.8,36.4,175.8-10.2,220.9c-46.8,45.3-127,45.3-173.9,0
+                  C122.4,207.8,117.7,85.8,158.8,32z"/>
+              </g>
+            </g>
+            <g id="Layer_2">
+              <g class="fill">
+                <path class="st1" d="M158.8,31.9h194.5c41.1,53.8,36.4,175.8-10.2,220.9c-46.8,45.3-127,45.3-173.9,0
+                  C122.4,207.7,117.7,85.7,158.8,31.9z"/>
+              </g>
+              <path class="st0" d="M186,530.8"/>
+            </g>
+            </svg>
           </div>
         </div>
 
@@ -96,4 +205,6 @@
     </div>
   </body>
   <script src="./js/index.js" defer></script>
+  <script src="./js/script.js" defer></script>
+  <script type="text/javascript" src="js/winejs.js" defer></script>
 </html>

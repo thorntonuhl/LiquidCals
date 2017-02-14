@@ -24,57 +24,81 @@ var height = document.getElementById('drinkcontainer');
 var amount = document.getElementById('slider');
 var answer = 0;
 
+
+// First Page
 var wineGlass = document.getElementById('wine-glass')
 var shotGlass = document.getElementById('shot-glass')
 var soloCup = document.getElementById('solo-cup')
 var coffeeCup = document.getElementById('coffee-cup')
+var container = ''
 
-function chooseContainer2(){
+function chooseContainer(){
   container = this.id
   curr = 2
+  display(curr)
 }
 
-wineGlass.onclick = chooseContainer2
-shotGlass.onclick = chooseContainer2
-soloCup.onclick = chooseContainer2
-coffeeCup.onclick = chooseContainer2
+wineGlass.onclick = chooseContainer
+shotGlass.onclick = chooseContainer
+soloCup.onclick = chooseContainer
+coffeeCup.onclick = chooseContainer
 
-// function display(page) {
-//   page.style.display = 'block';
-//   if (page == firstpg) {
-//     secondpg.style.display = 'none';
-//     thirdpg.style.display = 'none';
-//     next = document.getElementById('firstpgnext');
-//   }
-//   else if (page == secondpg) {
-//     firstpg.style.display = 'none';
-//     thirdpg.style.display = 'none';
-//     next = document.getElementById('secondpgnext');
-//   }
-//   else {
-//     firstpg.style.display = 'none';
-//     secondpg.style.display = 'none';
-//     next = document.getElementById('thirdpgnext');
-//   }
-// } 
+// Second Page
+var buttonOne = document.getElementById('button-1')
+var buttonTwo = document.getElementById('button-2')
+var buttonThree = document.getElementById('button-3')
+var buttonFour = document.getElementById('button-4')
+var drink = ''
+buttonOne.onclick = chooseDrink
+buttonTwo.onclick = chooseDrink
+buttonThree.onclick = chooseDrink
+buttonFour.onclick = chooseDrink
 
-// function choosecontainer(ccontainer) {
-//   if (ccontainer == 'wine glass') container = "wine glass";
-//   else if (ccontainer == 'coffee cup') container = "coffee cup";
-//   else if (ccontainer == 'shot glass') container = "shot glass";
-//   else if (ccontainer == 'plastic cup') container = "plastic cup";
-//   curr = 2; // Move to search page
-// }
+function chooseDrink() {
+  drink = this.value
+  curr = 3
+  display(curr)
+}
 
-// if (curr == 1) {//FIRST PAGE
-//   display(firstpg);
-// }
+// Third Page
 
-// else if (curr == 2) {//SECOND PAGE
-//   display(secondpg);
-//   submit.onclick = choosedrink();
-// }
+var soloCupSlider = document.getElementById('solo-cup-slider')
+var wineGlassSlider = document.getElementById('wine-glass-slider')
+var shotGlassSlider = document.getElementById('shot-glass-slider')
+var coffeeCupSlider = document.getElementById('coffee-cup-slider')
 
-// else {
-//   answer = (height / amount) * calories;
-// }
+// Display
+function display(index) {
+  if (index == 1) {
+    firstpg.style.display = 'block';
+    secondpg.style.display = 'none';
+    thirdpg.style.display = 'none';
+  }
+  else if (index == 2) {
+    firstpg.style.display = 'none';
+    secondpg.style.display = 'block';
+    thirdpg.style.display = 'none';
+  }
+  else {
+    firstpg.style.display = 'none';
+    secondpg.style.display = 'none';
+    thirdpg.style.display = 'block';
+
+    switch(container) { 
+      case 'wine-glass':
+        wineGlassSlider.style.display = 'block'
+        break;
+      case 'shot-glass':
+        shotGlassSlider.style.display = 'block'
+        break;
+      case 'solo-cup':
+        soloCupSlider.style.display = 'block'
+        break;
+      case 'coffee-cup':
+        coffeeCupSlider.style.display = 'block'
+        break;
+      default:
+    }
+  }
+} 
+
