@@ -76,4 +76,3 @@ var options = {
 
 
 $("#search-bar").autocomplete(options);
-
