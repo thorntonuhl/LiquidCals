@@ -136,6 +136,7 @@ function display(index) {
         offset = $("#coffee-cup-slider .fill").offset().top;
       default:
     }
+	  fillpercent = 1;
   }
 } 
 
