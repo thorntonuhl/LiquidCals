@@ -35,4 +35,4 @@ var drinks = [
   {"label" : 'dr pepper cherry' , "value" : 156 },
   {"label" : 'arizona iced tea' , "value" : 135 }, //arizona lemon tea
   {"label" : '5 hour energy' , "value" : 25 },
-  ]
+]
