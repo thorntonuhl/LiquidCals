@@ -27,7 +27,6 @@ var answer = 0;
 // 
 
 function previousPage() {
-  console.log('hi')
   curr -= 1
   display(curr)
 }
