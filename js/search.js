@@ -4,6 +4,8 @@ Includes functions that assigns values to the drink variable that is used to
 search for the calorie data from the calorie db through input from the html
 page.
 ---------------------*/
+
+$(document).ready(function () {
 var drinks = [
   {name: "coke", calories: 10},
   {name: "diet coke", calories: 100 }
@@ -50,4 +52,5 @@ var options = {
 };
 
 $("#provider-json").easyAutocomplete(options);
+});
 
