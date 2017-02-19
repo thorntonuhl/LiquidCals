@@ -47,6 +47,8 @@
   font-size: 25px;
   color: white;
   border-radius: 12px;
+  text-align: center;
+  line-height: 150px;
 }
 
 #button-1, #button-3{

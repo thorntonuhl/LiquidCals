@@ -106,7 +106,7 @@ buttonFour.onclick = chooseDrink
 submitButton.onclick = chooseDrinkFromSearchBar
 
 function chooseDrink() {
-  drink = this.value
+  drink = this.dataset.value
   curr = 3
   display(curr)
 }
