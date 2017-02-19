@@ -136,6 +136,7 @@ function display(index) {
         offset = $("#coffee-cup-slider .fill").offset().top;
       default:
     }
+	  fillpercent = 1;
   }
 } 
 
@@ -165,7 +166,7 @@ $("#thirdpg").mouseup(function(){
 $("#thirdpg").mousemove(function(event){
 	"use strict";
 	if (isdragging) {
-    fillpercent = ((($(".fill").height() + $(".fill").offset().top) - event.pageY) / $(".fill").height());
+    fillpercent = (((height + offset) - event.pageY) / height);
 	if (fillpercent > 0 && fillpercent < 1) {
 		$(".st1").css("-webkit-clip-path", "polygon(0 " + ((1-fillpercent)*100) + "%, 100% " + ((1-fillpercent)*100) + "%, 100% 100%, 0% 100%)");
 		$("#text").text("Carories in drink: " + (fillpercent.toFixed(3)*100).toFixed(1));
