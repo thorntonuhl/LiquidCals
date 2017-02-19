@@ -5,7 +5,6 @@ search for the calorie data from the calorie db through input from the html
 page.
 ---------------------*/
 
-$(document).ready(function () {
 
 // var drinks = [
 //   {label: "coke", value: 10},
@@ -70,4 +69,3 @@ var options = {
 
 
 $("#search-bar").autocomplete(options);
-
