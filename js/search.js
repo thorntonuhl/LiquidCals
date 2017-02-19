@@ -4,7 +4,12 @@ Includes functions that assigns values to the drink variable that is used to
 search for the calorie data from the calorie db through input from the html
 page.
 ---------------------*/
+var drinks = [
+  {name: "coke", calories: 10},
+  {name: "diet coke", calories: 100 }
+]
 
+// console.log(drinks)
 var secondpg = document.getElementById('secondpg'); //Adjust name as needed
 var submit = document.getElementById('submit_button');
 var searchbar = document.getElementById('search_button');
@@ -31,4 +36,18 @@ function choosedrink() {   //Finalize drink choice and indicate moving to next p
 	}
 }
 
-submit.onclick = choosedrink();
+var options = {
+  url: "./drinks.js",
+  getValue: function(element) {
+    console.log('hi')
+    return element.name;
+  },
+  list: {
+    match: {
+      enabled: true
+    }
+  }
+};
+
+$("#provider-json").easyAutocomplete(options);
+
