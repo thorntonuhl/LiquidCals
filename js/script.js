@@ -25,6 +25,12 @@ var amount = document.getElementById('slider');
 var answer = 0;
 
 
+//drink vars
+var isdragging = false;	
+var fillpercent = 1;
+var height = 0;
+var offset = 0;
+
 // First Page
 var wineGlass = document.getElementById('wine-glass')
 var shotGlass = document.getElementById('shot-glass')
@@ -44,10 +50,10 @@ soloCup.onclick = chooseContainer
 coffeeCup.onclick = chooseContainer
 
 // Second Page
-var buttonOne = document.getElementById('button-1')
-var buttonTwo = document.getElementById('button-2')
-var buttonThree = document.getElementById('button-3')
-var buttonFour = document.getElementById('button-4')
+var buttonOne = document.getElementById('button-1');
+var buttonTwo = document.getElementById('button-2');
+var buttonThree = document.getElementById('button-3');
+var buttonFour = document.getElementById('button-4');
 var drink = ''
 buttonOne.onclick = chooseDrink
 buttonTwo.onclick = chooseDrink
@@ -62,10 +68,10 @@ function chooseDrink() {
 
 // Third Page
 
-var soloCupSlider = document.getElementById('solo-cup-slider')
-var wineGlassSlider = document.getElementById('wine-glass-slider')
-var shotGlassSlider = document.getElementById('shot-glass-slider')
-var coffeeCupSlider = document.getElementById('coffee-cup-slider')
+var soloCupSlider = document.getElementById('solo-cup-slider');
+var wineGlassSlider = document.getElementById('wine-glass-slider');
+var shotGlassSlider = document.getElementById('shot-glass-slider');
+var coffeeCupSlider = document.getElementById('coffee-cup-slider');
 
 // Display
 function display(index) {
@@ -86,19 +92,63 @@ function display(index) {
 
     switch(container) { 
       case 'wine-glass':
-        wineGlassSlider.style.display = 'block'
+        wineGlassSlider.style.display = 'block';
+		height = $("#wine-glass-slider .fill").height();
+		offset = $("#wine-glass-slider .fill").offset().top;
         break;
       case 'shot-glass':
-        shotGlassSlider.style.display = 'block'
+        shotGlassSlider.style.display = 'block';
+		height = $("#shot-glass-slider .fill").height();
+		offset = $("#shot-glass-slider .fill").offset().top;
         break;
       case 'solo-cup':
-        soloCupSlider.style.display = 'block'
+        soloCupSlider.style.display = 'block';
+		height = $("#solo-cup-slider .fill").height();
+		offset = $("#solo-cup-slider .fill").offset().top;
         break;
       case 'coffee-cup':
-        coffeeCupSlider.style.display = 'block'
+        coffeeCupSlider.style.display = 'block';
+		height = $("#coffee-cup-slider .fill").height();
+		offset = $("#coffee-cup-slider .fill").offset().top;
         break;
       default:
     }
   }
 } 
+
+
+var isdragging = false;	
+var fillpercent = 1;
+
+$("#thirdpg").click(function(event){
+	"use strict";
+    fillpercent = (((height + offset) - event.pageY) / height);
+	if (fillpercent > 0 && fillpercent < 1) {
+		$(".st1").css("-webkit-clip-path", "polygon(0 " + ((1-fillpercent)*100) + "%, 100% " + ((1-fillpercent)*100) + "%, 100% 100%, 0% 100%)");
+		$("#text").text("Calories in drink: " + (fillpercent.toFixed(3)*100).toFixed(1));
+}
+});
+
+$("#thirdpg").mousedown(function(){
+	"use strict";
+	isdragging = true;
+});	
+	
+$("#thirdpg").mouseup(function(){
+	"use strict";
+	isdragging = false;
+});	
+	
+$("#thirdpg").mousemove(function(event){
+	"use strict";
+	if (isdragging) {
+    fillpercent = ((($(".fill").height() + $(".fill").offset().top) - event.pageY) / $(".fill").height());
+	if (fillpercent > 0 && fillpercent < 1) {
+		$(".st1").css("-webkit-clip-path", "polygon(0 " + ((1-fillpercent)*100) + "%, 100% " + ((1-fillpercent)*100) + "%, 100% 100%, 0% 100%)");
+		$("#text").text("Carories in drink: " + (fillpercent.toFixed(3)*100).toFixed(1));
+}
+	}
+});	
+
+
 
