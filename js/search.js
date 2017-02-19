@@ -4,10 +4,37 @@ Includes functions that assigns values to the drink variable that is used to
 search for the calorie data from the calorie db through input from the html
 page.
 ---------------------*/
+
+
+// var drinks = [
+//   {label: "coke", value: 10},
+//   {label: "diet coke", value: 100 }
+// ]
+
 var drinks = [
-  {name: "coke", calories: 10},
-  {name: "diet coke", calories: 100 }
-]
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
 
 // console.log(drinks)
 var secondpg = document.getElementById('secondpg'); //Adjust name as needed
@@ -37,17 +64,8 @@ function choosedrink() {   //Finalize drink choice and indicate moving to next p
 }
 
 var options = {
-  url: "./drinks.js",
-  getValue: function(element) {
-    console.log('hi')
-    return element.name;
-  },
-  list: {
-    match: {
-      enabled: true
-    }
-  }
+  source: drinks
 };
 
-$("#provider-json").easyAutocomplete(options);
+$("#search-bar").autocomplete(options);
 
