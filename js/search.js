@@ -5,6 +5,33 @@ search for the calorie data from the calorie db through input from the html
 page.
 ---------------------*/
 
+
+
+var drinks = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+
 var secondpg = document.getElementById('secondpg'); //Adjust name as needed
 var submit = document.getElementById('submit_button');
 var searchbar = document.getElementById('search_button');
@@ -34,6 +61,7 @@ function choosedrink() {   //Finalize drink choice and indicate moving to next p
 var options = {
   source: drinks
 };
+
 
 $("#search-bar").autocomplete(options);
 

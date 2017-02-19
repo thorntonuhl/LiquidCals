@@ -19,7 +19,7 @@ var submit = document.getElementById('submit_button');
 var searchbar = document.getElementById('search_button');
 var drink = "";
 
-var thirdpag = document.getElementById('thirdpg');  //Adjust name as needed
+var thirdpg = document.getElementById('thirdpg');  //Adjust name as needed
 var height = document.getElementById('drinkcontainer');
 var amount = document.getElementById('slider');
 var answer = 0;
@@ -103,49 +103,48 @@ function display(index) {
 
     switch(container) { 
       case 'wine-glass':
-        wineGlassSlider.style.display = 'block'
-        shotGlassSlider.style.display = 'none'
-        soloCupSlider.style.display = 'none'
-        coffeeCupSlider.style.display = 'none'
+        wineGlassSlider.style.display = 'block';
+        shotGlassSlider.style.display = 'none';
+        soloCupSlider.style.display = 'none';
+        coffeeCupSlider.style.display = 'none';
         height = $("#wine-glass-slider .fill").height();
         offset = $("#wine-glass-slider .fill").offset().top;
         break;
       case 'shot-glass':
-        wineGlassSlider.style.display = 'none'
-        shotGlassSlider.style.display = 'block'
-        soloCupSlider.style.display = 'none'
-        coffeeCupSlider.style.display = 'none'
+        wineGlassSlider.style.display = 'none';
+        shotGlassSlider.style.display = 'block';
+        soloCupSlider.style.display = 'none';
+        coffeeCupSlider.style.display = 'none';
         height = $("#shot-glass-slider .fill").height();
         offset = $("#shot-glass-slider .fill").offset().top;
         break;
       case 'solo-cup':
-        wineGlassSlider.style.display = 'none'
-        shotGlassSlider.style.display = 'none'
-        soloCupSlider.style.display = 'block'
-        coffeeCupSlider.style.display = 'none'
+        wineGlassSlider.style.display = 'none';
+        shotGlassSlider.style.display = 'none';
+        soloCupSlider.style.display = 'block';
+        coffeeCupSlider.style.display = 'none';
         height = $("#solo-cup-slider .fill").height();
         offset = $("#solo-cup-slider .fill").offset().top;
         break;
       case 'coffee-cup':
-        wineGlassSlider.style.display = 'none'
-        shotGlassSlider.style.display = 'none'
-        soloCupSlider.style.display = 'none'
-        coffeeCupSlider.style.display = 'block'
+        wineGlassSlider.style.display = 'none';
+        shotGlassSlider.style.display = 'none';
+        soloCupSlider.style.display = 'none';
+        coffeeCupSlider.style.display = 'block';
         height = $("#coffee-cup-slider .fill").height();
         offset = $("#coffee-cup-slider .fill").offset().top;
+		break;
       default:
     }
 	  fillpercent = 1;
   }
 } 
 
-
-var isdragging = false;	
-var fillpercent = 1;
-
 $("#thirdpg").click(function(event){
 	"use strict";
+	console.log("click test");
     fillpercent = (((height + offset) - event.pageY) / height);
+	console.log("height: " + height + " offset: " + offset);
 	if (fillpercent > 0 && fillpercent < 1) {
 		$(".st1").css("-webkit-clip-path", "polygon(0 " + ((1-fillpercent)*100) + "%, 100% " + ((1-fillpercent)*100) + "%, 100% 100%, 0% 100%)");
 		$("#text").text("Calories in drink: " + (fillpercent.toFixed(3)*100).toFixed(1));
