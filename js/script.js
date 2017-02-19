@@ -8,8 +8,8 @@ var curr = 1; // For keeping tab on which page we're supposed to be on.
 var caloriedb = {};  // fill in by declaring with known drinks (key) and calorie data
 var calories = 0;    // What we're going to return
 
-//var next = document.getElementById('next');         //Adjust name as needed (for next button)
-
+var previousButton = document.getElementById('previous-button');
+previousButton.style.display = 'none';
 var firstpg = document.getElementById('home');
 var container = "";
 
@@ -24,6 +24,15 @@ var height = document.getElementById('drinkcontainer');
 var amount = document.getElementById('slider');
 var answer = 0;
 
+// 
+
+function previousPage() {
+  console.log('hi')
+  curr -= 1
+  display(curr)
+}
+
+previousButton.onclick = previousPage
 
 // First Page
 var wineGlass = document.getElementById('wine-glass')
@@ -73,28 +82,43 @@ function display(index) {
     firstpg.style.display = 'block';
     secondpg.style.display = 'none';
     thirdpg.style.display = 'none';
+    previousButton.style.display = 'none';
   }
   else if (index == 2) {
     firstpg.style.display = 'none';
     secondpg.style.display = 'block';
     thirdpg.style.display = 'none';
+    previousButton.style.display = 'block';
   }
   else {
     firstpg.style.display = 'none';
     secondpg.style.display = 'none';
     thirdpg.style.display = 'block';
+    previousButton.style.display = 'block';
 
     switch(container) { 
       case 'wine-glass':
         wineGlassSlider.style.display = 'block'
+        shotGlassSlider.style.display = 'none'
+        soloCupSlider.style.display = 'none'
+        coffeeCupSlider.style.display = 'none'
         break;
       case 'shot-glass':
+        wineGlassSlider.style.display = 'none'
         shotGlassSlider.style.display = 'block'
+        soloCupSlider.style.display = 'none'
+        coffeeCupSlider.style.display = 'none'
         break;
       case 'solo-cup':
+        wineGlassSlider.style.display = 'none'
+        shotGlassSlider.style.display = 'none'
         soloCupSlider.style.display = 'block'
+        coffeeCupSlider.style.display = 'none'
         break;
       case 'coffee-cup':
+        wineGlassSlider.style.display = 'none'
+        shotGlassSlider.style.display = 'none'
+        soloCupSlider.style.display = 'none'
         coffeeCupSlider.style.display = 'block'
         break;
       default:

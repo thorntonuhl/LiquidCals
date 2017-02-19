@@ -1,15 +1,75 @@
-#secondpg{display: none;}
-#form_row{width:50%; text-align: center; background-color: white; margin: auto; border:solid; border-width: 3px; border-color: #666666;}
+#secondpg{display: none;
+}
+#secondpg .container {
+  width: 80%;
+}
+#form_row{
+  width:50%;
+  text-align: center;
+  background-color: white;
+  margin: auto;
+  border:solid;
+  border-width: 3px;
+  border-color: #666666;
+}
 
-#search_button{font-size: xx-large; align-self:center}
+#search_button{
+  font-size: xx-large;
+  align-self:center;
+}
 
-#submit_row{width:100%; height:30px; background-color: white; text-align: center;}
+#submit_row{
+  width:100%;
+  margin: 10px 0px;
+  background-color: white;
+  text-align: center;
+}
 
-#submit_button{width: 100px; height: 50px; top:50%; left:50%;}
+#submit_button{width: 100px;
+ height: 50px;
+ top:50%;
+ left:50%;
+}
 
-#first_row {width:100%; height:170px; background-color: white;}
+#first_row {width:100%;
+ height:170px;
+ background-color: white;
+ margin: auto
+}
  
-#button-1, #button-2, #button-3, #button-4 {width:48%; height:150px; margin: 35px 5px 5px 12px; background-color: #91DC5A; font-family: Verdana; font-size: 25px; color: white; border-radius: 12px;}
-#button-1:hover, #button-2:hover, #button-3:hover, #button-4:hover {width:48%; height:150px; margin: 35px 5px 5px 12px; background-color: #666666; font-family: Verdana; font-size: 25px; border-radius: 12px;}
+#button-1, #button-2, #button-3, #button-4 {
+  padding: 0px;
+  float: left;
+  width:45%;
+  height:150px;
+  background-color: #91DC5A;
+  font-family: Verdana;
+  font-size: 25px;
+  color: white;
+  border-radius: 12px;
+}
 
-#second_row {width:100%; height:170px; background-color: white;}
+#button-1, #button-3{
+  margin-right: 10%;
+}
+
+#button-1:hover, #button-3:hover{
+  margin-right: 10%;
+}
+
+#button-1:hover, #button-2:hover, #button-3:hover, #button-4:hover {
+  padding: 0px;
+  width:45%;
+  float: left
+  height:150px;
+  background-color: #666666;
+  font-family: Verdana;
+  font-size: 25px;
+  border-radius: 12px;
+}
+
+#second_row {
+  width:100%;
+  height:170px;
+  background-color: white;
+}

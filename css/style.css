@@ -124,6 +124,10 @@ p {
   width: 100%;
 }
 
+#previous-button {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
   .body-landing .landing-drinks .drinks-container .container {
     width: 100%;
