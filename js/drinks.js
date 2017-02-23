@@ -20,6 +20,7 @@ var drinks = [
 
   {"label" : 'orange juice'         , "value" : 165 }, //Dole no pulp OJ
   {"label" : 'izze sparkling juice' , "value" : 129 }, //value same regardless of flavor
+<<<<<<< HEAD
   {"label" : 'lemonade'             , "value" : 150 }, //minute maid lemonade
   {"label" : 'odwalla smoothie'     , "value" : 221 }, //odwalla mango tango smoothie
   {"label" : 'milk'                 , "value" : 155 }, //generic google
@@ -43,3 +44,24 @@ var drinks = [
   {"label" : 'arizona lemon tea'    , "value" : 135 }, //arizona lemon tea
   {"label" : 'arizona green tea'    , "value" : 90  },  //arizona green tea 
   ]
+=======
+  {"label" : 'red bull' , "value" : 157 },
+  {"label" : 'monster' , "value" : 143 }, //generic google
+  {"label" : 'vodka' , "value" : 768 }, //generic google
+  {"label" : 'beer' , "value" : 156 }, //generic google
+  {"label" : 'milk' , "value" : 155 }, //generic google
+  {"label" : 'latte' , "value" : 150 }, //starbucks caffe latte w/ 2% milk
+  {"label" : 'mocha' , "value" : 230 }, //starbucks caffe mocha w/ 2% milk
+  {"label" : 'cappuccino' , "value" : 90 }, //starbucks cappucino
+  {"label" : 'lemonade' , "value" : 150 }, //minute maid lemonade
+  {"label" : 'odwalla smoothie' , "value" : 221 }, //odwalla mango tango smoothie
+  {"label" : 'sprite' , "value" : 140 },
+  {"label" : 'powerade' , "value" : 80 },
+  {"label" : 'fanta' , "value" : 160 }, //orange fanta
+  {"label" : 'mist twst' , "value" : 150 }, //sierra mist
+  {"label" : 'dr pepper' , "value" : 150 },
+  {"label" : 'dr pepper cherry' , "value" : 156 },
+  {"label" : 'arizona iced tea' , "value" : 135 }, //arizona lemon tea
+  {"label" : '5 hour energy' , "value" : 25 },
+]
+>>>>>>> origin/master

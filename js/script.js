@@ -3,6 +3,39 @@
 //EECS 330
 //Colin Pham, Thornton Uhl, Matthew Griswold, Ethan Park
 
+var drinks = [
+  {"label" : 'coke' , "value" : 140 },
+  //{"label" : 'diet coke' , "value" : 1 },
+  {"label" : 'coke cherry' , "value" : 154 },
+  //{"label" : 'coke zero' , "value" : 1 },
+  {"label" : 'pepsi' , "value" : 150 },
+  {"label" : 'mountain dew' , "value" : 170 },
+  /*{"label" : 'diet mountain dew' , "value" ; 0 },
+  {"label" : 'mountain dew voltage' , "value" : 170 },
+  {"label" : 'mountain dew code red' , "value" : 170 },*/
+  {"label" : 'gatorade' , "value" : 80 }, //value same regardless of flavor
+  {"label" : 'orange juice' , "value" : 165 }, //Dole no pulp OJ
+  {"label" : 'izze sparkling juice' , "value" : 129 }, //value same regardless of flavor
+  {"label" : 'red bull' , "value" : 157 },
+  {"label" : 'monster' , "value" : 143 }, //generic google
+  {"label" : 'vodka' , "value" : 768 }, //generic google
+  {"label" : 'beer' , "value" : 156 }, //generic google
+  {"label" : 'milk' , "value" : 155 }, //generic google
+  {"label" : 'latte' , "value" : 150 }, //starbucks caffe latte w/ 2% milk
+  {"label" : 'mocha' , "value" : 230 }, //starbucks caffe mocha w/ 2% milk
+  {"label" : 'cappuccino' , "value" : 90 }, //starbucks cappucino
+  {"label" : 'lemonade' , "value" : 150 }, //minute maid lemonade
+  {"label" : 'odwalla smoothie' , "value" : 221 }, //odwalla mango tango smoothie
+  {"label" : 'sprite' , "value" : 140 },
+  {"label" : 'powerade' , "value" : 80 },
+  {"label" : 'fanta' , "value" : 160 }, //orange fanta
+  {"label" : 'mist twst' , "value" : 150 }, //sierra mist
+  {"label" : 'dr pepper' , "value" : 150 },
+  {"label" : 'dr pepper cherry' , "value" : 156 },
+  {"label" : 'arizona iced tea' , "value" : 135 }, //arizona lemon tea
+  {"label" : '5 hour energy' , "value" : 25 },
+]
+
 var curr = 1; // For keeping tab on which page we're supposed to be on.
 
 var caloriedb = {};  // fill in by declaring with known drinks (key) and calorie data
@@ -62,14 +95,24 @@ var buttonOne = document.getElementById('button-1');
 var buttonTwo = document.getElementById('button-2');
 var buttonThree = document.getElementById('button-3');
 var buttonFour = document.getElementById('button-4');
+var submitButton = document.getElementById('submit_button');
+var searchBar = document.getElementById('search-bar');
+
 var drink = ''
 buttonOne.onclick = chooseDrink
 buttonTwo.onclick = chooseDrink
 buttonThree.onclick = chooseDrink
 buttonFour.onclick = chooseDrink
+submitButton.onclick = chooseDrinkFromSearchBar
 
 function chooseDrink() {
-  drink = this.value
+  drink = this.dataset.value
+  curr = 3
+  display(curr)
+}
+
+function chooseDrinkFromSearchBar() {
+  drink = searchBar.value
   curr = 3
   display(curr)
 }
@@ -80,6 +123,16 @@ var soloCupSlider = document.getElementById('solo-cup-slider');
 var wineGlassSlider = document.getElementById('wine-glass-slider');
 var shotGlassSlider = document.getElementById('shot-glass-slider');
 var coffeeCupSlider = document.getElementById('coffee-cup-slider');
+
+function determineCalories(drink) {
+  var calories = 0
+  drinks.forEach(function(d) {
+    if (d.label == drink) {
+      calories = d.value
+    }
+  })
+  return calories
+}
 
 // Display
 function display(index) {
@@ -107,6 +160,7 @@ function display(index) {
         shotGlassSlider.style.display = 'none';
         soloCupSlider.style.display = 'none';
         coffeeCupSlider.style.display = 'none';
+        determineCalories(drink)
         height = $("#wine-glass-slider .fill").height();
         offset = $("#wine-glass-slider .fill").offset().top;
         break;
@@ -115,6 +169,7 @@ function display(index) {
         shotGlassSlider.style.display = 'block';
         soloCupSlider.style.display = 'none';
         coffeeCupSlider.style.display = 'none';
+        determineCalories(drink)
         height = $("#shot-glass-slider .fill").height();
         offset = $("#shot-glass-slider .fill").offset().top;
         break;
@@ -123,6 +178,7 @@ function display(index) {
         shotGlassSlider.style.display = 'none';
         soloCupSlider.style.display = 'block';
         coffeeCupSlider.style.display = 'none';
+        determineCalories(drink)
         height = $("#solo-cup-slider .fill").height();
         offset = $("#solo-cup-slider .fill").offset().top;
         break;
@@ -131,6 +187,7 @@ function display(index) {
         shotGlassSlider.style.display = 'none';
         soloCupSlider.style.display = 'none';
         coffeeCupSlider.style.display = 'block';
+        determineCalories(drink)
         height = $("#coffee-cup-slider .fill").height();
         offset = $("#coffee-cup-slider .fill").offset().top;
 		break;
@@ -147,7 +204,7 @@ $("#thirdpg").click(function(event){
 	console.log("height: " + height + " offset: " + offset);
 	if (fillpercent > 0 && fillpercent < 1) {
 		$(".st1").css("-webkit-clip-path", "polygon(0 " + ((1-fillpercent)*100) + "%, 100% " + ((1-fillpercent)*100) + "%, 100% 100%, 0% 100%)");
-		$("#text").text("Calories in drink: " + (fillpercent.toFixed(3)*100).toFixed(1));
+		$("#text").text("Calories in drink: " + (fillpercent.toFixed(3)* determineCalories(drink)).toFixed(1));
 }
 });
 
@@ -167,7 +224,7 @@ $("#thirdpg").mousemove(function(event){
     fillpercent = (((height + offset) - event.pageY) / height);
 	if (fillpercent > 0 && fillpercent < 1) {
 		$(".st1").css("-webkit-clip-path", "polygon(0 " + ((1-fillpercent)*100) + "%, 100% " + ((1-fillpercent)*100) + "%, 100% 100%, 0% 100%)");
-		$("#text").text("Carories in drink: " + (fillpercent.toFixed(3)*100).toFixed(1));
+		$("#text").text("Calories in drink: " + (fillpercent.toFixed(3)* determineCalories(drink)).toFixed(1));
 }
 	}
 });	
