@@ -2,7 +2,7 @@
 //Website to track the number of calories consumed from beverages
 //EECS 330
 //Colin Pham, Thornton Uhl, Matthew Griswold, Ethan Park
-
+$( document ).ready(function() {
 var drinks = [
   {"label" : 'coke' , "value" : 140 },
   //{"label" : 'diet coke' , "value" : 1 },
@@ -53,7 +53,7 @@ var searchbar = document.getElementById('search_button');
 var drink = "";
 
 var thirdpg = document.getElementById('thirdpg');  //Adjust name as needed
-var height = document.getElementById('drinkcontainer');
+//var height = document.getElementById('drinkcontainer');
 var amount = document.getElementById('slider');
 var answer = 0;
 
@@ -69,8 +69,11 @@ previousButton.onclick = previousPage
 //drink vars
 var isdragging = false;	
 var fillpercent = 1;
-var height = 0;
-var offset = 0;
+var bh1 = $("#bh1").offset().top;
+var bh2 = $("#bh2").offset().top;
+var height = $("#wine-glass-slider .fill").height();
+var offset = $("#wine-glass-slider .fill").offset().top;
+
 
 // First Page
 var wineGlass = document.getElementById('wine-glass')
@@ -83,6 +86,7 @@ function chooseContainer(){
   container = this.id
   curr = 2
   display(curr)
+  updatecup();
 }
 
 wineGlass.onclick = chooseContainer
@@ -104,17 +108,18 @@ buttonTwo.onclick = chooseDrink
 buttonThree.onclick = chooseDrink
 buttonFour.onclick = chooseDrink
 submitButton.onclick = chooseDrinkFromSearchBar
+container = wineGlass;
 
 function chooseDrink() {
   drink = this.dataset.value
   curr = 3
-  display(curr)
+  display(curr);
 }
 
 function chooseDrinkFromSearchBar() {
   drink = searchBar.value
   curr = 3
-  display(curr)
+  display(curr);
 }
 
 // Third Page
@@ -137,30 +142,43 @@ function determineCalories(drink) {
 // Display
 function display(index) {
   if (index == 1) {
-    firstpg.style.display = 'block';
-    secondpg.style.display = 'none';
-    thirdpg.style.display = 'none';
-    previousButton.style.display = 'none';
+    //firstpg.style.display = 'block';
+    //secondpg.style.display = 'none';
+    //thirdpg.style.display = 'none';
+    //previousButton.style.display = 'none';
+	  
   }
   else if (index == 2) {
-    firstpg.style.display = 'none';
+    /*firstpg.style.display = 'none';
     secondpg.style.display = 'block';
     thirdpg.style.display = 'none';
-    previousButton.style.display = 'block';
+    previousButton.style.display = 'block';*/
+	  $('html, body').animate({
+        scrollTop: ($("#searchwrapper").offset().top-80)
+    }, 600);
+	 console.log("scroll1");
   }
   else {
-    firstpg.style.display = 'none';
+    /*firstpg.style.display = 'none';
     secondpg.style.display = 'none';
     thirdpg.style.display = 'block';
-    previousButton.style.display = 'block';
+    previousButton.style.display = 'block';*/
+	 $('html, body').animate({
+        scrollTop: ($("#cupwrapper").offset().top-80)
 
-    switch(container) { 
+	}, 600);
+	  console.log("scroll2");
+  }
+} 
+
+function updatecup() {
+	    switch(container) { 
       case 'wine-glass':
         wineGlassSlider.style.display = 'block';
         shotGlassSlider.style.display = 'none';
         soloCupSlider.style.display = 'none';
         coffeeCupSlider.style.display = 'none';
-        determineCalories(drink)
+        determineCalories(drink);
         height = $("#wine-glass-slider .fill").height();
         offset = $("#wine-glass-slider .fill").offset().top;
         break;
@@ -169,7 +187,7 @@ function display(index) {
         shotGlassSlider.style.display = 'block';
         soloCupSlider.style.display = 'none';
         coffeeCupSlider.style.display = 'none';
-        determineCalories(drink)
+        determineCalories(drink);
         height = $("#shot-glass-slider .fill").height();
         offset = $("#shot-glass-slider .fill").offset().top;
         break;
@@ -178,7 +196,7 @@ function display(index) {
         shotGlassSlider.style.display = 'none';
         soloCupSlider.style.display = 'block';
         coffeeCupSlider.style.display = 'none';
-        determineCalories(drink)
+        determineCalories(drink);
         height = $("#solo-cup-slider .fill").height();
         offset = $("#solo-cup-slider .fill").offset().top;
         break;
@@ -187,17 +205,16 @@ function display(index) {
         shotGlassSlider.style.display = 'none';
         soloCupSlider.style.display = 'none';
         coffeeCupSlider.style.display = 'block';
-        determineCalories(drink)
+        determineCalories(drink);
         height = $("#coffee-cup-slider .fill").height();
         offset = $("#coffee-cup-slider .fill").offset().top;
 		break;
       default:
     }
 	  fillpercent = 1;
-  }
-} 
+}
 
-$("#thirdpg").click(function(event){
+$("#cupright").click(function(event){
 	"use strict";
 	console.log("click test");
     fillpercent = (((height + offset) - event.pageY) / height);
@@ -208,17 +225,17 @@ $("#thirdpg").click(function(event){
 }
 });
 
-$("#thirdpg").mousedown(function(){
+$("#cupright").mousedown(function(){
 	"use strict";
 	isdragging = true;
 });	
 	
-$("#thirdpg").mouseup(function(){
+$("#cupright").mouseup(function(){
 	"use strict";
 	isdragging = false;
 });	
 	
-$("#thirdpg").mousemove(function(event){
+$("#cupright").mousemove(function(event){
 	"use strict";
 	if (isdragging) {
     fillpercent = (((height + offset) - event.pageY) / height);
@@ -230,4 +247,26 @@ $("#thirdpg").mousemove(function(event){
 });	
 
 
+$(document).scroll(function() {
+	"use strict";
+	var y = $(this).scrollTop();
+	var bh1 = $("#home").offset().top + $("#home").height();
+	var bh2 = $("#searchwrapper").offset().top + $("#searchwrapper").height();
+	console.log("bh1: " + bh1 + " bh2: " + bh2 + " y: " + y);
+	
+	if (bh1 > 1) {
+	
+  	if (y > (bh1 - 100)) {
+    	$('#bh1').fadeIn();
+  	} else {
+    	$('#bh1').fadeOut();
+  	}
+	if (y > (bh2 -100)) {
+    	$('#bh2').fadeIn();
+	} else {
+    	$('#bh2').fadeOut();
+	}
+	}
+});
 
+});

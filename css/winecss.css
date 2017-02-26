@@ -1,11 +1,11 @@
 @charset "UTF-8";
 /* CSS Document */
 
-.st0{fill:#91DC5A;}
+.st0{fill:white;}
 
 .st1{
 	cursor: pointer;
-	fill:#666666;
+	fill:#9F0002;
 	-webkit-clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 100%);
 
 }
@@ -17,14 +17,14 @@
 	margin-right: auto;
 }
 
-#text {
+#text2 {
 	margin: 20px auto 0 auto;
 	font-size: 20px;
 	text-align: center
 	
 }
 
-#solo-cup-slider, #wine-glass-slider, #shot-glass-slider, #coffee-cup-slider {
+#solo-cup-slider, #shot-glass-slider, #coffee-cup-slider {
 	display: none;
 }
 
