@@ -4,37 +4,48 @@
 //Colin Pham, Thornton Uhl, Matthew Griswold, Ethan Park
 $( document ).ready(function() {
 var drinks = [
-  {"label" : 'coke' , "value" : 140 },
-  //{"label" : 'diet coke' , "value" : 1 },
-  {"label" : 'coke cherry' , "value" : 154 },
-  //{"label" : 'coke zero' , "value" : 1 },
-  {"label" : 'pepsi' , "value" : 150 },
-  {"label" : 'mountain dew' , "value" : 170 },
-  /*{"label" : 'diet mountain dew' , "value" ; 0 },
-  {"label" : 'mountain dew voltage' , "value" : 170 },
-  {"label" : 'mountain dew code red' , "value" : 170 },*/
-  {"label" : 'gatorade' , "value" : 80 }, //value same regardless of flavor
-  {"label" : 'orange juice' , "value" : 165 }, //Dole no pulp OJ
-  {"label" : 'izze sparkling juice' , "value" : 129 }, //value same regardless of flavor
-  {"label" : 'red bull' , "value" : 157 },
-  {"label" : 'monster' , "value" : 143 }, //generic google
-  {"label" : 'vodka' , "value" : 768 }, //generic google
-  {"label" : 'beer' , "value" : 156 }, //generic google
-  {"label" : 'milk' , "value" : 155 }, //generic google
-  {"label" : 'latte' , "value" : 150 }, //starbucks caffe latte w/ 2% milk
-  {"label" : 'mocha' , "value" : 230 }, //starbucks caffe mocha w/ 2% milk
-  {"label" : 'cappuccino' , "value" : 90 }, //starbucks cappucino
-  {"label" : 'lemonade' , "value" : 150 }, //minute maid lemonade
-  {"label" : 'odwalla smoothie' , "value" : 221 }, //odwalla mango tango smoothie
-  {"label" : 'sprite' , "value" : 140 },
-  {"label" : 'powerade' , "value" : 80 },
-  {"label" : 'fanta' , "value" : 160 }, //orange fanta
-  {"label" : 'mist twst' , "value" : 150 }, //sierra mist
-  {"label" : 'dr pepper' , "value" : 150 },
-  {"label" : 'dr pepper cherry' , "value" : 156 },
-  {"label" : 'arizona iced tea' , "value" : 135 }, //arizona lemon tea
-  {"label" : '5 hour energy' , "value" : 25 },
-]
+  {"label" : 'Coke'                 , "value" : 140 },
+  {"label" : 'Coke Cherry'          , "value" : 154 },
+  {"label" : 'Pepsi'                , "value" : 150 },
+  {"label" : 'Mountain Dew'         , "value" : 170 },
+  {"label" : 'Sprite'               , "value" : 140 },
+  {"label" : 'Fanta'                , "value" : 160 }, //orange fanta
+  {"label" : 'Mist Twst'            , "value" : 150 }, //sierra mist
+  {"label" : 'Dr Pepper'            , "value" : 150 },
+  {"label" : 'Dr Pepper Cherry'     , "value" : 156 },
+
+  {"label" : 'Gatorade'             , "value" : 80  }, //value same regardless of flavor
+  {"label" : 'Powerade'             , "value" : 80  },
+
+  {"label" : 'Orange Juice'         , "value" : 165 }, //Dole no pulp OJ
+  {"label" : 'Izze Sparkling Juice' , "value" : 129 }, //value same regardless of flavor
+
+  {"label" : 'Lemonade'             , "value" : 150 }, //minute maid lemonade
+  {"label" : 'Odwalla Smoothie'     , "value" : 221 }, //odwalla mango tango smoothie
+  {"label" : 'Milk'                 , "value" : 155 }, //generic google 'Milk'
+
+  {"label" : 'Red Bull'             , "value" : 157 },
+  {"label" : 'Monster'              , "value" : 143 }, //generic google 'Monster'
+  {"label" : '5 Hour Energy'        , "value" : 25  },
+  
+  {"label" : 'Coffee'               , "value" : 60  }, //pure coffee with no additives
+  {"label" : 'Latte'                , "value" : 150 }, //all data from starbucks
+  {"label" : 'Mocha'                , "value" : 230 }, 
+  {"label" : 'Cappuccino'           , "value" : 90  },
+  {"label" : 'Caramel Macchiato'    , "value" : 190 } ,
+
+  {"label" : 'Vodka'                , "value" : 768 }, //generic google
+  {"label" : 'Beer'                 , "value" : 156 }, //generic google
+  {"label" : 'Tequila'              , "value" : 828 }, //generic google 'tequila'
+  {"label" : 'Rum'                  , "value" : 768 }, //generic google 'rum, 80 proof'
+  {"label" : 'Whiskey'              , "value" : 840 }, //generic google 'whiskey, 86 proof'
+  {"label" : 'Wine'                 , "value" : 295 }, //generic google 'wine'
+  {"label" : 'Champagne'            , "value" : 285 }, //generic google 'champagne'
+  {"label" : 'Gin'                  , "value" : 876 }, //generic google 'gin, 90 proof'
+
+  {"label" : 'Arizona Lemon Tea'    , "value" : 135 }, //arizona lemon tea
+  {"label" : 'Arizona Green Tea'    , "value" : 90  },  //arizona green tea 
+  ]
 
 var container_sizes = {
   'wine-glass': 12,
@@ -89,7 +100,7 @@ var caloriesNavBar = document.getElementsByClassName('calheader')
 
 function updateCalories() {
   for (var i = 0; i < caloriesNavBar.length; i++) {
-    caloriesNavBar[i].innerText = 'Today you have had ' + totalCalories + ' calories.'
+    caloriesNavBar[i].innerText = 'Today you have had ' + totalCalories + ' Liquid Calories.'
   }
 }
 updateCalories()
