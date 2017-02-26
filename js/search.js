@@ -40,13 +40,13 @@ var drinks = [
 
   {"label" : 'Vodka'                , "value" : 768 }, //generic google
   {"label" : 'Beer'                 , "value" : 156 }, //generic google
-  
-  {"label" : 'Blue Moon'            , "value" : 171 }, //blue moon belgian white beer
-  {"label" : 'Grey Goose Vodka'     , "value" : 828 }, //grey goose vodka
-
+  {"label" : 'Tequila'              , "value" : 828 }, //generic google 'tequila'
+  {"label" : 'Rum'                  , "value" : 768 }, //generic google 'rum, 80 proof'
+  {"label" : 'Whiskey'              , "value" : 840 }, //generic google 'whiskey, 86 proof'
   {"label" : 'Wine'                 , "value" : 295 }, //generic google 'wine'
-  {"label" : 'Champagne'            , 'value' : 285 }, //generic google 'champagne'
-  
+  {"label" : 'Champagne'            , "value" : 285 }, //generic google 'champagne'
+  {"label" : 'Gin'                  , "value" : 876 }, //generic google 'gin, 90 proof'
+
   {"label" : 'Arizona Lemon Tea'    , "value" : 135 }, //arizona lemon tea
   {"label" : 'Arizona Green Tea'    , "value" : 90  },  //arizona green tea 
   ]
