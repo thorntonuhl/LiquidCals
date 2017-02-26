@@ -43,10 +43,13 @@ var container_sizes = {
   'coffee-cup': 6
 }
 
+
 var curr = 1; // For keeping tab on which page we're supposed to be on.
 
 var caloriedb = {};  // fill in by declaring with known drinks (key) and calorie data
 var calories = 0;    // What we're going to return
+
+var totalCalories = 0; // Total calories consumed
 
 var previousButton = document.getElementById('previous-button');
 previousButton.style.display = 'none';
@@ -78,6 +81,19 @@ var isdragging = false;
 var fillpercent = 1;
 var height = $("#wine-glass-slider .fill").height();
 var offset = $("#wine-glass-slider .fill").offset().top;
+
+
+// Nav Bar Calories
+
+var caloriesNavBar = document.getElementsByClassName('calheader')
+
+function updateCalories() {
+  for (var i = 0; i < caloriesNavBar.length; i++) {
+    caloriesNavBar[i].innerText = 'Today you have had ' + totalCalories + ' calories.'
+  }
+}
+updateCalories()
+
 
 
 // First Page
@@ -136,6 +152,8 @@ var wineGlassSlider = document.getElementById('wine-glass-slider');
 var shotGlassSlider = document.getElementById('shot-glass-slider');
 var coffeeCupSlider = document.getElementById('coffee-cup-slider');
 
+var addButton = document.getElementById('addbutton')
+
 function determineCalories(drink) {
   var calories = 0
   drinks.forEach(function(d) {
@@ -145,6 +163,14 @@ function determineCalories(drink) {
   })
   return calories
 }
+
+function addCalories(carlories) {
+  totalCalories += parseInt((fillpercent.toFixed(3)* determineCalories(drink)).toFixed(0))
+  updateCalories()
+  curr = 1
+}
+
+addButton.onclick = addCalories
 
 // Display
 function display(index) {
@@ -163,7 +189,6 @@ function display(index) {
 	  $('html, body').animate({
         scrollTop: ($("#searchwrapper").offset().top-80)
     }, 600);
-	 console.log("scroll1");
   }
   else {
     /*firstpg.style.display = 'none';
@@ -174,7 +199,6 @@ function display(index) {
         scrollTop: ($("#cupwrapper").offset().top-80)
 
 	}, 600);
-	  console.log("scroll2");
   }
 } 
 
@@ -223,9 +247,7 @@ function updatecup() {
 
 $("#cupright").click(function(event){
 	"use strict";
-	console.log("click test");
     fillpercent = (((height + offset) - event.pageY) / height);
-	console.log("height: " + height + " offset: " + offset);
 	if (fillpercent > 0 && fillpercent < 1) {
 		$(".st1").css("-webkit-clip-path", "polygon(0 " + ((1-fillpercent)*100) + "%, 100% " + ((1-fillpercent)*100) + "%, 100% 100%, 0% 100%)");
 		$("#text").text((fillpercent.toFixed(3)* determineCalories(drink)).toFixed(0));
@@ -259,7 +281,6 @@ $(document).scroll(function() {
 	var y = $(this).scrollTop();
 	var bh1 = $("#home").offset().top + $("#home").height();
 	var bh2 = $("#searchwrapper").offset().top + $("#searchwrapper").height();
-	console.log("bh1: " + bh1 + " bh2: " + bh2 + " y: " + y);
 	
 	if (bh1 > 1) {
 	
