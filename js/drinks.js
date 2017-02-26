@@ -5,42 +5,45 @@ Includes necessary extrapolation based on similar drinks.
 ------------------------*/
 
 var drinks = [
-  {"label" : 'coke'                 , "value" : 140 },
-  {"label" : 'coke cherry'          , "value" : 154 },
-  {"label" : 'pepsi'                , "value" : 150 },
-  {"label" : 'mountain dew'         , "value" : 170 },
-  {"label" : 'sprite'               , "value" : 140 },
-  {"label" : 'fanta'                , "value" : 160 }, //orange fanta
-  {"label" : 'mist twst'            , "value" : 150 }, //sierra mist
-  {"label" : 'dr pepper'            , "value" : 150 },
-  {"label" : 'dr pepper cherry'     , "value" : 156 },
+  {"label" : 'Coke'                 , "value" : 140 },
+  {"label" : 'Coke Cherry'          , "value" : 154 },
+  {"label" : 'Pepsi'                , "value" : 150 },
+  {"label" : 'Mountain Dew'         , "value" : 170 },
+  {"label" : 'Sprite'               , "value" : 140 },
+  {"label" : 'Fanta'                , "value" : 160 }, //orange fanta
+  {"label" : 'Mist Twst'            , "value" : 150 }, //sierra mist
+  {"label" : 'Dr Pepper'            , "value" : 150 },
+  {"label" : 'Dr Pepper Cherry'     , "value" : 156 },
 
-  {"label" : 'gatorade'             , "value" : 80  }, //value same regardless of flavor
-  {"label" : 'powerade'             , "value" : 80  },
+  {"label" : 'Gatorade'             , "value" : 80  }, //value same regardless of flavor
+  {"label" : 'Powerade'             , "value" : 80  },
 
-  {"label" : 'orange juice'         , "value" : 165 }, //Dole no pulp OJ
-  {"label" : 'izze sparkling juice' , "value" : 129 }, //value same regardless of flavor
+  {"label" : 'Orange Juice'         , "value" : 165 }, //Dole no pulp OJ
+  {"label" : 'Izze Sparkling Juice' , "value" : 129 }, //value same regardless of flavor
 
-  {"label" : 'lemonade'             , "value" : 150 }, //minute maid lemonade
-  {"label" : 'odwalla smoothie'     , "value" : 221 }, //odwalla mango tango smoothie
-  {"label" : 'milk'                 , "value" : 155 }, //generic google
+  {"label" : 'Lemonade'             , "value" : 150 }, //minute maid lemonade
+  {"label" : 'Odwalla Smoothie'     , "value" : 221 }, //odwalla mango tango smoothie
+  {"label" : 'Milk'                 , "value" : 155 }, //generic google 'Milk'
 
-  {"label" : 'red bull'             , "value" : 157 },
-  {"label" : 'monster'              , "value" : 143 }, //generic google
-  {"label" : '5 hour energy'        , "value" : 25  },
+  {"label" : 'Red Bull'             , "value" : 157 },
+  {"label" : 'Monster'              , "value" : 143 }, //generic google 'Monster'
+  {"label" : '5 Hour Energy'        , "value" : 25  },
   
-  {"label" : 'coffee'               , "value" : 60  }, //pure coffee with no additives
-  {"label" : 'latte'                , "value" : 150 }, //all data from starbucks
-  {"label" : 'mocha'                , "value" : 230 }, 
-  {"label" : 'cappuccino'           , "value" : 90  },
-  {"label" : 'caramel macchiato'    , "value" : 190 } ,
+  {"label" : 'Coffee'               , "value" : 60  }, //pure coffee with no additives
+  {"label" : 'Latte'                , "value" : 150 }, //all data from starbucks
+  {"label" : 'Mocha'                , "value" : 230 }, 
+  {"label" : 'Cappuccino'           , "value" : 90  },
+  {"label" : 'Caramel Macchiato'    , "value" : 190 } ,
 
-  {"label" : 'vodka'                , "value" : 768 }, //generic google
-  {"label" : 'beer'                 , "value" : 156 }, //generic google
+  {"label" : 'Vodka'                , "value" : 768 }, //generic google
+  {"label" : 'Beer'                 , "value" : 156 }, //generic google
   
-  {"label" : 'blue moon'            , "value" : 171 }, //blue moon belgian white beer
-  {"label" : 'grey goose vodka'     , "value" : 828 }, //grey goose vodka
+  {"label" : 'Blue Moon'            , "value" : 171 }, //blue moon belgian white beer
+  {"label" : 'Grey Goose Vodka'     , "value" : 828 }, //grey goose vodka
+
+  {"label" : 'Wine'                 , "value" : 295 }, //generic google 'wine'
+  {"label" : 'Champagne'            , 'value' : 285 }, //generic google 'champagne'
   
-  {"label" : 'arizona lemon tea'    , "value" : 135 }, //arizona lemon tea
-  {"label" : 'arizona green tea'    , "value" : 90  },  //arizona green tea 
+  {"label" : 'Arizona Lemon Tea'    , "value" : 135 }, //arizona lemon tea
+  {"label" : 'Arizona Green Tea'    , "value" : 90  },  //arizona green tea 
   ]
