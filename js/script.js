@@ -69,8 +69,6 @@ previousButton.onclick = previousPage
 //drink vars
 var isdragging = false;	
 var fillpercent = 1;
-var bh1 = $("#bh1").offset().top;
-var bh2 = $("#bh2").offset().top;
 var height = $("#wine-glass-slider .fill").height();
 var offset = $("#wine-glass-slider .fill").offset().top;
 
@@ -102,12 +100,12 @@ var buttonFour = document.getElementById('button-4');
 var submitButton = document.getElementById('submit_button');
 var searchBar = document.getElementById('search-bar');
 
-var drink = ''
-buttonOne.onclick = chooseDrink
-buttonTwo.onclick = chooseDrink
-buttonThree.onclick = chooseDrink
-buttonFour.onclick = chooseDrink
-submitButton.onclick = chooseDrinkFromSearchBar
+var drink = '';
+buttonOne.onclick = chooseDrink;
+buttonTwo.onclick = chooseDrink;
+buttonThree.onclick = chooseDrink;
+buttonFour.onclick = chooseDrink;
+submitButton.onclick = chooseDrinkFromSearchBar;
 container = wineGlass;
 
 function chooseDrink() {
@@ -117,8 +115,10 @@ function chooseDrink() {
 }
 
 function chooseDrinkFromSearchBar() {
-  drink = searchBar.value
-  curr = 3
+  drink = searchBar.value;
+  $("#cupsubtext").text("Click and drag the liquid in the cup to reflect how much " + drink + "  you drank");
+	determineCalories(drink);
+  curr = 3;
   display(curr);
 }
 
@@ -221,7 +221,7 @@ $("#cupright").click(function(event){
 	console.log("height: " + height + " offset: " + offset);
 	if (fillpercent > 0 && fillpercent < 1) {
 		$(".st1").css("-webkit-clip-path", "polygon(0 " + ((1-fillpercent)*100) + "%, 100% " + ((1-fillpercent)*100) + "%, 100% 100%, 0% 100%)");
-		$("#text").text("Calories in drink: " + (fillpercent.toFixed(3)* determineCalories(drink)).toFixed(1));
+		$("#text").text((fillpercent.toFixed(3)* determineCalories(drink)).toFixed(1));
 }
 });
 
@@ -241,7 +241,7 @@ $("#cupright").mousemove(function(event){
     fillpercent = (((height + offset) - event.pageY) / height);
 	if (fillpercent > 0 && fillpercent < 1) {
 		$(".st1").css("-webkit-clip-path", "polygon(0 " + ((1-fillpercent)*100) + "%, 100% " + ((1-fillpercent)*100) + "%, 100% 100%, 0% 100%)");
-		$("#text").text("Calories in drink: " + (fillpercent.toFixed(3)* determineCalories(drink)).toFixed(1));
+		$("#text").text((fillpercent.toFixed(3)* determineCalories(drink)).toFixed(1));
 }
 	}
 });	

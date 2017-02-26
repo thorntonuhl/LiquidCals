@@ -139,15 +139,27 @@ html, body {
 }
 
 #text {
-	font-size: 20px;
+	font-size: 48px;
 	margin-top: 50px;
-	color: #9F0002;
+	width:200px;
+	height:200px;
+	color: white;
 	display: inline-block;
 	font-weight: bold;
-	padding:10px;
 	text-align: center;
-	border: solid 5px white;
-	border-radius: 15px;
+	border: solid 15px white;
+	border-radius: 50%;
+	line-height: 170px;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
+	float:left;
+}
+
+#caloriestext {
+	color:white;
+	font-size: 48px;
+	font-weight: bold;
+	float:right;
+	margin-top:110px;
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
 }
 
@@ -155,6 +167,8 @@ html, body {
 	margin-left:auto;
 	margin-right:auto;
 	text-align: center;
+	background: red;
+	width:475px;
 }
 
 .bottomheader {
