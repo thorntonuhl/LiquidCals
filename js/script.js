@@ -36,6 +36,13 @@ var drinks = [
   {"label" : '5 hour energy' , "value" : 25 },
 ]
 
+var container_sizes = {
+  'wine-glass': 12,
+  'shot-glass': 1.5,
+  'solo-cup': 16,
+  'coffee-cup': 6
+}
+
 var curr = 1; // For keeping tab on which page we're supposed to be on.
 
 var caloriedb = {};  // fill in by declaring with known drinks (key) and calorie data
@@ -133,7 +140,7 @@ function determineCalories(drink) {
   var calories = 0
   drinks.forEach(function(d) {
     if (d.label == drink) {
-      calories = d.value
+      calories = d.value * container_sizes[container] / 12
     }
   })
   return calories
@@ -221,7 +228,7 @@ $("#cupright").click(function(event){
 	console.log("height: " + height + " offset: " + offset);
 	if (fillpercent > 0 && fillpercent < 1) {
 		$(".st1").css("-webkit-clip-path", "polygon(0 " + ((1-fillpercent)*100) + "%, 100% " + ((1-fillpercent)*100) + "%, 100% 100%, 0% 100%)");
-		$("#text").text((fillpercent.toFixed(3)* determineCalories(drink)).toFixed(1));
+		$("#text").text((fillpercent.toFixed(3)* determineCalories(drink)).toFixed(0));
 }
 });
 
@@ -241,7 +248,7 @@ $("#cupright").mousemove(function(event){
     fillpercent = (((height + offset) - event.pageY) / height);
 	if (fillpercent > 0 && fillpercent < 1) {
 		$(".st1").css("-webkit-clip-path", "polygon(0 " + ((1-fillpercent)*100) + "%, 100% " + ((1-fillpercent)*100) + "%, 100% 100%, 0% 100%)");
-		$("#text").text((fillpercent.toFixed(3)* determineCalories(drink)).toFixed(1));
+		$("#text").text((fillpercent.toFixed(3)* determineCalories(drink)).toFixed(0));
 }
 	}
 });	
