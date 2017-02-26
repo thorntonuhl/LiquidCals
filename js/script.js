@@ -148,10 +148,20 @@ function chooseDrink() {
   display(curr);
 }
 
+document.querySelector('#search-bar').addEventListener('keypress', function (e) {
+    var key = e.which || e.keyCode;
+    if (key === 13) { 
+      if ($.trim($('#search-bar').val()) !== '') {
+		  chooseDrinkFromSearchBar();
+	  }
+    }
+});
+	
+	
 function chooseDrinkFromSearchBar() {
   drink = searchBar.value;
   $("#cupsubtext").text("Click and drag the liquid in the cup to reflect how much " + drink + "  you drank");
-	determineCalories(drink);
+$("#text").text(determineCalories(drink).toFixed(0));
   curr = 3;
   display(curr);
 }
@@ -169,7 +179,7 @@ function determineCalories(drink) {
   var calories = 0
   drinks.forEach(function(d) {
     if (d.label == drink) {
-      calories = d.value * container_sizes[container] / 12
+      calories = (d.value * (container_sizes[container] / 12));
     }
   })
   return calories
@@ -177,8 +187,9 @@ function determineCalories(drink) {
 
 function addCalories(carlories) {
   totalCalories += parseInt((fillpercent.toFixed(3)* determineCalories(drink)).toFixed(0))
-  updateCalories()
-  curr = 1
+  updateCalories();
+  curr = 1;
+  display(curr);
 }
 
 addButton.onclick = addCalories
@@ -190,6 +201,10 @@ function display(index) {
     //secondpg.style.display = 'none';
     //thirdpg.style.display = 'none';
     //previousButton.style.display = 'none';
+	  console.log("go to top")
+	  $('html, body').animate({
+        scrollTop: 0
+    }, 1000);
 	  
   }
   else if (index == 2) {
